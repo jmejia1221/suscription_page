@@ -1,4 +1,5 @@
-import React from 'react';
+import { useRouter } from 'next/dist/client/router';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 // Components
@@ -11,6 +12,12 @@ import * as action from '../redux/actions';
 import styles from './index.module.scss';
 
 const Home = (props) => {
+    useEffect(() => {
+        props.onGetUsers();
+    }, []);
+
+    const router = useRouter();
+
     const plans = [
         {
             id: 1,
@@ -47,19 +54,28 @@ const Home = (props) => {
         }
     ];
 
-    const plansListed = plans.map(plan => (
-        <Plan key={plan.id} plan={plan} />
-    ));
-
-    const handlerRedux = () => {
-        console.log(props)
-        props.onGetUsers();
+    if (props.users.length) {
+        plans.forEach((plan, i) => {
+            props.users.forEach(user => {
+                if (plan.plan.toLowerCase() === user.data.SUBSCRIPTION.toLowerCase()) {
+                    plans[i]['userId'] = user.id;
+                }
+            });
+        });
     }
+
+    const choosePlanHandler = (userId) => {
+        router.push('/users/' + userId);
+    }
+
+    const plansListed = plans.map(plan => (
+        <Plan planHandler={choosePlanHandler} key={plan.id} plan={plan} />
+    ));
 
     return (
         <div className={styles.mainContent}>
             <hgroup className={styles.groupTitle}>
-                <h1 onClick={handlerRedux} className={styles.title}>
+                <h1 className={styles.title}>
                     <span className={styles['title--hightlight']}>Flexible</span> Plans
                 </h1>
                 <h2 className={styles.subtitle}>Choose a plan that works best for you and your team.</h2>

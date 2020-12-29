@@ -37,7 +37,7 @@ const Plan = (props) => {
                 </ul>
             </section>
             <footer className={styles.footer}>
-                <Button>
+                <Button clicked={() => props.planHandler(props.plan.userId)}>
                     Choose Plan
                     <FontAwesomeIcon className={styles.arrowIcon} icon={faLongArrowAltRight} />
                 </Button>

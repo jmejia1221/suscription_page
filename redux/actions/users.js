@@ -18,7 +18,7 @@ export const getUsers = () => {
     return dispatch => {
         axios.get('http://localhost:8010/api/v1/customerdata/')
             .then(response => {
-                console.log(response)
+                dispatch(getUsersSuccess(response.data.results));
             })
             .catch(err => {
                 console.log(err)

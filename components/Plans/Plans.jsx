@@ -5,7 +5,7 @@ import styles from './Plans.module.scss';
 
 const Plans = (props) => {
     return (
-        <div>
+        <div className={styles.plans}>
             {props.children}
         </div>
     );

@@ -1,16 +1,17 @@
 /* CSS variables */
 :root {
-    --primary: #0C0BE0;
+    --primary: #302EEF;
 
     --white: #fff;
     --bg-color: #FAF9FE;
 
     --grey: #A7ADBC;
     --grey-light: #AFB4CE;
-    --grey-lighter: #cfd8f0;
+    --grey-lighter: #f7f7f7;
+    --grey-lightest: #FCFCFC;
 
     --grey-dark: #3F435B;
-    --grey-darkest: #050509;
+    --grey-darkest: #191D29;
 }
 
 /* Adding reset styles */
@@ -28,7 +29,9 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--bg-color);
+    color: var(--grey-darkest);
+    font-size: 1.6rem;
+    background-color: var(--grey-lightest);
     box-sizing: border-box;
 }
 h1, h2, h3, h4 {
@@ -36,6 +39,7 @@ h1, h2, h3, h4 {
 }
 ul {
     margin: 0;
+    padding: 0;
 }
 ul li {
     list-style-type: none;

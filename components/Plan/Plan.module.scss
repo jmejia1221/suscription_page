@@ -1,0 +1,60 @@
+.plan {
+    min-width: 28rem;
+    background-color: var(--grey-lighter);
+    padding: 2rem 3rem;
+    border-radius: 1.5rem;
+    margin-right: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 40rem;
+    box-shadow: 0 .8rem 2rem rgba(0,0,0,0.1);
+    align-content: flex-start;
+    flex-direction: column;
+    &:last-child {
+        margin-right: 0;
+    }
+    &.main {
+        transform: scale(1.1);
+        background-color: var(--grey-darkest);
+        color: var(--grey-lightest);
+        box-shadow: 0 0.8rem 2rem rgba(0,0,0,0.5);
+    }
+    .checkIcon{
+        margin-right: 1rem;
+    }
+    .arrowIcon  {
+        margin-left: 1rem;
+    }
+    .header {
+        width: 100%;
+        padding: 2rem 0;
+        margin-bottom: 3rem;
+        border-bottom: 1px solid var(--grey-light);
+        .title {
+            font-size: 2.8rem;
+            margin-bottom: .5rem;
+            font-weight: normal;
+        }
+        .price {
+            font-weight: bold;
+            font-size: 2rem;
+            &--text {
+                font-weight: normal;
+                font-size: 1.2rem;
+            }
+        }
+    }
+    .content {
+        width: 100%;
+        .features {
+            font-size: 1.4rem;
+            li {
+                margin-bottom: .8rem;
+            }
+        }
+    }
+    .footer {
+        width: 100%;
+        margin-top: auto;
+    }
+}

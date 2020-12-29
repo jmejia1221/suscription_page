@@ -1,0 +1,42 @@
+/* CSS variables */
+:root {
+    --primary: #0C0BE0;
+
+    --white: #fff;
+    --bg-color: #FAF9FE;
+
+    --grey: #A7ADBC;
+    --grey-light: #AFB4CE;
+    --grey-lighter: #cfd8f0;
+
+    --grey-dark: #3F435B;
+    --grey-darkest: #050509;
+}
+
+/* Adding reset styles */
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+body,
+html {
+    font-family: Helvetica, sans-serif, Arial;
+    font-size: 62.5%;
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    box-sizing: border-box;
+}
+h1, h2, h3, h4 {
+    margin: 0;
+}
+ul {
+    margin: 0;
+}
+ul li {
+    list-style-type: none;
+}

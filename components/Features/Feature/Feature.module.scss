@@ -9,4 +9,13 @@
     &:nth-child(even) {
         margin-right: 0;
     }
+    .header {
+        min-height: 5rem;
+        h4 {
+            font-size: 1.8rem;
+        }
+    }
+    .arrowIcon {
+        margin-left: 1rem;
+    }
 }

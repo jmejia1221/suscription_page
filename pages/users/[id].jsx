@@ -1,8 +1,15 @@
+import React, { useEffect, useState } from 'react';
+
+// Libs
+import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRouter } from 'next/dist/client/router';
-import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+
+// Components
 import Feature from '../../components/Features/Feature/Feature';
 import Features from '../../components/Features/Features';
+import SlidePanel from '../../components/UI/SlidePanel/SlidePanel';
 
 import * as action from '../../redux/actions';
 
@@ -10,6 +17,7 @@ import * as action from '../../redux/actions';
 import styles from './userDetail.module.scss';
 
 const User = (props) => {
+    const [togglePanel, setTogglePanel] = useState(false);
     const router = useRouter();
     const { id } = router.query;
 
@@ -52,6 +60,76 @@ const User = (props) => {
         }
     ];
 
+    const themes = [
+        {
+            name: 'Simply Fabulous',
+            value: 'simply_fabulous'
+        },
+        {
+            name: 'Tropical Island',
+            value: 'tropical_island'
+        },
+        {
+            name: 'Safari',
+            value: 'safari'
+        },
+        {
+            name: 'Tranquility',
+            value: 'tranquility'
+        },
+        {
+            name: 'Mustache Bash',
+            value: 'mustache_bash'
+        },
+        {
+            name: 'Candy Crush',
+            value: 'candy_crush'
+        },
+        {
+            name: 'Garden Party',
+            value: 'garden_party'
+        }
+    ];
+
+    let themeListed = themes.map((theme, i) => {
+        return (
+            <li key={i}>{theme.name}</li>
+        )
+    });
+
+    const languages = [
+        {
+            name: 'Chiniese',
+            value: 'zh'
+        },
+        {
+            name: 'Italian',
+            value: 'it'
+        },
+        {
+            name: 'English',
+            value: 'en'
+        },
+        {
+            name: 'Spanish',
+            value: 'es'
+        },
+        {
+            name: 'French',
+            value: 'fr'
+        },
+        {
+            name: 'German',
+            value: 'de'
+        }
+    ];
+
+    let languageListed = languages.map((language, i) => {
+        return (
+            <li key={i}>{language.name}</li>
+        );
+    });
+
     let userInfo = null;
     let modulesInfo = null;
     if (props.userDetail) {
@@ -86,14 +164,50 @@ const User = (props) => {
             </aside>
         )
         modulesInfo = FEATURES.map(feature => (
-            <Feature key={feature.id} feature={feature} />
+            <Feature
+                key={feature.id}
+                feature={feature} />
         ))
+    }
+
+    const handlerPanel = () => {
+        setTogglePanel(!togglePanel);
     }
 
     return (
         <div className={styles.userDetail}>
+            <SlidePanel handlerPanel={handlerPanel} showPanel={togglePanel}>
+                <div className={styles.panel}>
+                    <h2 className={styles.panelTitle}>Settings</h2>
+                </div>
+                <section className={styles.settingsContent}>
+                    <div className={styles.sharedContent}>
+                        <strong className={styles.themeTitle}>Theme</strong>
+                        <ul className={styles.themeListed}>
+                            {themeListed}
+                        </ul>
+                    </div>
+                    <div className={styles.sharedContent}>
+                        <strong className={styles.themeTitle}>Language</strong>
+                        <ul className={styles.themeListed}>
+                            {languageListed}
+                        </ul>
+                    </div>
+                    <div className={styles.sharedContent}>
+                        <strong className={styles.themeTitle}>Time Zone</strong>
+                        <ul className={styles.themeListed}>
+                            {themeListed}
+                        </ul>
+                    </div>
+                </section>
+            </SlidePanel>
             {userInfo}
             <section className={styles.sectionDetail}>
+                <header>
+                    <div onClick={handlerPanel} className={styles.settingsIcon}>
+                        <FontAwesomeIcon icon={faCog} />
+                    </div>
+                </header>
                 <Features>
                     {modulesInfo}
                 </Features>
@@ -110,6 +224,6 @@ const mapDispatchToProps = dispatch => {
     return {
         onGetUserDetail: (userId) => dispatch(action.getUserDetail(userId))
     }
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(User);

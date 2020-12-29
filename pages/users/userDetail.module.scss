@@ -9,10 +9,63 @@
     box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.2);
     border-radius: 3rem;
     transform: translateY(20rem);
+    position: relative;
+    overflow: hidden;
+    .panel {
+        display: flex;
+        padding: 5rem 2rem 3rem;
+    }
+    .panelTitle {
+        width: 100%;
+        text-align: center;
+        font-size: 5rem;
+    }
+    .sharedContent {
+        padding: 2rem 4rem;
+    }
+    .themeTitle {
+        width: 100%;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        margin-left: 2.5rem;
+        display: inline-block;
+    }
+    .themeListed {
+        display: flex;
+        padding: 1rem;
+        li {
+            cursor: pointer;
+            color: var(--grey-lightest);
+            background-color: var(--grey-darkest);
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            margin-right: 1rem;
+            transition: all .5s;
+            &:hover {
+                background-color: var(--primary);
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
 }
 .sectionDetail {
     flex: 1 1 50rem;
     padding: 0 0 0 3rem;
+    .settingsIcon {
+        cursor: pointer;
+        position: absolute;
+        top: 2.5rem;
+        font-size: 2.2rem;
+        right: 2.5rem;
+        transition: all .5s;
+        &:hover {
+            transform: rotate(360deg);
+        }
+    }
 }
 .aside {
     color: var(--white);
@@ -27,14 +80,16 @@
     box-shadow: 0 .8rem 2rem rgba(0,0,0,0.3);
     .figure {
         width: 90%;
-        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         border-bottom: 1px solid var(--grey-lightest);
         padding-bottom: 2rem;
         margin-bottom: 5rem;
         .image {
-            display: inline-block;
+            display: flex;
             width: 15rem;
-            max-height: 15rem;
+            height: 15rem;
             border-radius: 50%;
             overflow: hidden;
             margin-bottom: 2rem;

@@ -1,4 +1,4 @@
-import { faLongArrowAltRight, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
@@ -11,13 +11,14 @@ import styles from './Feature.module.scss';
 const Feature = (props) => {
     return (
         <div className={styles.Feature}>
-            <header>
+            <header className={styles.header}>
                 <h4>{props.feature.name}</h4>
-                <FontAwesomeIcon icon={faStar} />
             </header>
             <Button>
-                Go
-                <FontAwesomeIcon icon={faLongArrowAltRight} />
+                See More
+                <FontAwesomeIcon
+                    className={styles.arrowIcon}
+                    icon={faLongArrowAltRight} />
             </Button>
         </div>
     );

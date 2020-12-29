@@ -1,13 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 // Components
 import Plan from '../components/Plan/Plan';
 import Plans from '../components/Plans/Plans';
 
+import * as action from '../redux/actions';
+
 // CSS
 import styles from './index.module.scss';
 
-const App = () => {
+const Home = (props) => {
     const plans = [
         {
             id: 1,
@@ -48,10 +51,15 @@ const App = () => {
         <Plan key={plan.id} plan={plan} />
     ));
 
+    const handlerRedux = () => {
+        console.log(props)
+        props.onGetUsers();
+    }
+
     return (
         <div className={styles.mainContent}>
             <hgroup className={styles.groupTitle}>
-                <h1 className={styles.title}>
+                <h1 onClick={handlerRedux} className={styles.title}>
                     <span className={styles['title--hightlight']}>Flexible</span> Plans
                 </h1>
                 <h2 className={styles.subtitle}>Choose a plan that works best for you and your team.</h2>
@@ -63,4 +71,14 @@ const App = () => {
     );
 };
 
-export default App;
+const mapStateToProps = state => ({
+    users: state.users.users
+});
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onGetUsers: () => dispatch(action.getUsers())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

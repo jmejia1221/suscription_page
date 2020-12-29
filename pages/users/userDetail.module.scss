@@ -1,0 +1,51 @@
+.userDetail {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 8rem;
+    background: #fff;
+    padding: 5%;
+    box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.2);
+    border-radius: 3rem;
+    transform: translateY(20rem);
+}
+.sectionDetail {
+    flex: 1 1 50rem;
+    padding: 0 0 0 3rem;
+}
+.aside {
+    color: var(--white);
+    min-width: 20rem;
+    max-width: 30rem;
+    padding: 5rem 2rem;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--grey-darkest);
+    box-shadow: 0 .8rem 2rem rgba(0,0,0,0.3);
+    .figure {
+        width: 90%;
+        text-align: center;
+        border-bottom: 1px solid var(--grey-lightest);
+        padding-bottom: 2rem;
+        margin-bottom: 5rem;
+        .image {
+            display: inline-block;
+            width: 15rem;
+            max-height: 15rem;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .infoList {
+        li {
+            margin-bottom: 1.5rem;
+        }
+    }
+}

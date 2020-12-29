@@ -2,7 +2,7 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
     users: [],
-    userDetail: [],
+    userDetail: null,
     loading: false
 };
 
@@ -29,9 +29,10 @@ const getUserDetailStart = (state, action) => {
 }
 
 const getUserDetailSuccess = (state, action) => {
+    console.log('action', action.userDetail)
     return {
         ...state,
-        users: [...action.userDetail],
+        userDetail: {...action.userDetail},
         loading: false,
     }
 }

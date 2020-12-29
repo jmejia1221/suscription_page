@@ -1,0 +1,12 @@
+.Feature {
+    width: 10rem;
+    flex: 1 1 20rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    background-color: var(--grey-lighter);
+    &:nth-child(even) {
+        margin-right: 0;
+    }
+}

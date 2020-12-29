@@ -1,9 +1,30 @@
-import React from 'react';
+import { useRouter } from 'next/dist/client/router';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 
-const User = () => {
+import * as action from '../../redux/actions';
+
+const User = (props) => {
+    const router = useRouter();
+    const { id } = router.query;
+
+    useEffect(() => {
+        props.onGetUserDetail(id)
+    }, []);
+
     return (
         <h1>user</h1>
     );
 };
 
-export default User;
+const mapStateToProps = state => ({
+    userDetail: state.users.userDetail
+});
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onGetUserDetail: (userId) => dispatch(action.getUserDetail(userId))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(User);

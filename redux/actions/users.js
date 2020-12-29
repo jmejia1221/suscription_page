@@ -1,6 +1,8 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
+const URL = 'http://localhost:8010/api/v1';
+
 export const getUsersStart = () => {
     return {
         type: actionTypes.GET_USER_DATA_START
@@ -16,7 +18,7 @@ export const getUsersSuccess = (userData) => {
 
 export const getUsers = () => {
     return dispatch => {
-        axios.get('http://localhost:8010/api/v1/customerdata/')
+        axios.get(URL + '/customerdata/')
             .then(response => {
                 dispatch(getUsersSuccess(response.data.results));
             })
@@ -25,3 +27,30 @@ export const getUsers = () => {
             });
     }
 };
+
+// User Detail fetching
+
+export const getUserDetailStart = () => {
+    return {
+        type: actionTypes.GET_USER_DETAIL_DATA_START
+    }
+}
+
+export const getUserDetailSuccess = (userData) => {
+    return {
+        type: actionTypes.GET_USER_DETAIL_DATA_SUCCESS,
+        userDetail: userData
+    }
+}
+
+export const getUserDetail = (userId) => {
+    return dispatch => {
+        axios.get(URL + '/customerdata/' + userId)
+            .then(response => {
+                dispatch(getUsersSuccess(response.data.results));
+            })
+            .catch(err => {
+                console.log(err)
+            });
+    }
+}

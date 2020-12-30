@@ -22,6 +22,7 @@ const Home = (props) => {
     const plans = [
         {
             id: 1,
+            userId: '6dcc8ff6-7080-46c5-88b4-bf144ad13d7b',
             plan: 'Free',
             price: '$0.000',
             features: [
@@ -31,6 +32,7 @@ const Home = (props) => {
         {
             id: 2,
             plan: 'Basic',
+            userId: '0db7504b-7be1-471f-abbb-e7b31c27ff06',
             main: true,
             price: '$40.000',
             features: [
@@ -43,6 +45,7 @@ const Home = (props) => {
         {
             id: 3,
             plan: 'Premium',
+            userId: '16488627-b794-4d52-8daa-12d6caf473bd',
             price: '$80.000',
             features: [
                 'Certificates Instructor Generation',
@@ -59,7 +62,7 @@ const Home = (props) => {
         plans.forEach((plan, i) => {
             props.users.forEach(user => {
                 if (plan.plan.toLowerCase() === user.data.SUBSCRIPTION.toLowerCase()) {
-                    plans[i]['userId'] = user.id;
+                    plans[i]['userId'] = user.id || plans[i]['userId'];
                 }
             });
         });

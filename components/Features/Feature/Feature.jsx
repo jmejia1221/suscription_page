@@ -14,7 +14,8 @@ const Feature = (props) => {
             <header className={styles.header}>
                 <h4>{props.feature.name}</h4>
             </header>
-            <Button>
+            <Button
+                isDisabled={props.disabled}>
                 See More
                 <FontAwesomeIcon
                     className={styles.arrowIcon}

@@ -7,4 +7,9 @@
     padding: 1.5rem 0;
     margin-top: 2rem;
     cursor: pointer;
+    &:disabled,
+    &[disabled] {
+        cursor: not-allowed;
+        background-color: var(--grey-light);
+    }
 }

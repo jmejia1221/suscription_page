@@ -15,6 +15,7 @@ import * as action from '../../redux/actions';
 
 // CSS
 import styles from './userDetail.module.scss';
+import Button from '../../components/UI/Button/Index';
 
 const User = (props) => {
     const [togglePanel, setTogglePanel] = useState(false);
@@ -163,11 +164,14 @@ const User = (props) => {
                 </ul>
             </aside>
         )
-        modulesInfo = FEATURES.map(feature => (
-            <Feature
-                key={feature.id}
-                feature={feature} />
-        ))
+        modulesInfo = FEATURES.map(feature => {
+            return (
+                <Feature
+                    disabled={!props.userDetail.data.ENABLED_FEATURES[feature.value]}
+                    key={feature.id}
+                    feature={feature} />
+            )
+        });
     }
 
     const handlerPanel = () => {
@@ -212,6 +216,13 @@ const User = (props) => {
                     {modulesInfo}
                 </Features>
             </section>
+
+            {
+                props.userDetail && props.userDetail.data.SUBSCRIPTION !== 'premium' &&
+                <Button clicked={() => router.push('/')}>
+                    Upgrade my plan
+                </Button>
+            }
         </div>
     );
 };

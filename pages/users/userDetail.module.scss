@@ -29,30 +29,6 @@
         margin-left: 2.5rem;
         display: inline-block;
     }
-    .themeListed {
-        display: flex;
-        padding: 1rem;
-        flex-wrap: wrap;
-        li {
-            cursor: pointer;
-            color: var(--grey-lightest);
-            background-color: var(--grey-darkest);
-            font-weight: bold;
-            font-size: 1.2rem;
-            padding: 1rem 2rem;
-            border-radius: 1rem;
-            margin-right: 1rem;
-            transition: all .5s;
-            margin-bottom: 1rem;
-            &:hover,
-            &.active {
-                background-color: var(--primary);
-            }
-            &:last-child {
-                margin-right: 0;
-            }
-        }
-    }
 }
 .sectionDetail {
     flex: 1 1 50rem;

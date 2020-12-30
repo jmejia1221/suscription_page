@@ -1,12 +1,13 @@
-import { useRouter } from 'next/dist/client/router';
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useRouter } from 'next/dist/client/router';
 
 // Components
 import Plan from '../components/Plan/Plan';
 import Plans from '../components/Plans/Plans';
 
+// Redux
 import * as action from '../redux/actions';
+import { connect } from 'react-redux';
 
 // CSS
 import styles from './index.module.scss';

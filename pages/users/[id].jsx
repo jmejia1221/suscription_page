@@ -20,6 +20,7 @@ import styles from './userDetail.module.scss';
 import Button from '../../components/UI/Button/Index';
 import Settings from '../../components/Settings';
 import SettingList from '../../components/Settings/settingList';
+import Spinner from '../../components/UI/Spinner';
 
 const User = (props) => {
     const [togglePanel, setTogglePanel] = useState(false);
@@ -141,7 +142,7 @@ const User = (props) => {
 
 
     let userInfo = null;
-    let modulesInfo = null;
+    let modulesInfo = <Spinner />;
     if (props.userDetail) {
         userInfo = (
             <aside className={styles.aside}>

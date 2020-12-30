@@ -1,12 +1,14 @@
 import { useRouter } from 'next/dist/client/router';
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
 
 // Components
 import UserList from '../../components/Users';
 import User from '../../components/Users/User';
+import Spinner from '../../components/UI/Spinner';
 
+// Redux
 import * as action from '../../redux/actions';
+import { connect } from 'react-redux';
 
 // CSS
 import styles from './users.module.scss';
@@ -21,7 +23,7 @@ const Users = (props) => {
         router.push('/users/' + id);
     }
 
-    let userListed = null;
+    let userListed = <Spinner />;
     if (props.users) {
         userListed = props.users.map(user => {
             return (

@@ -18,10 +18,13 @@ import * as action from '../../redux/actions';
 // CSS
 import styles from './userDetail.module.scss';
 import Button from '../../components/UI/Button/Index';
+import Settings from '../../components/Settings';
+import SettingList from '../../components/Settings/settingList';
 
 const User = (props) => {
     const [togglePanel, setTogglePanel] = useState(false);
     const [selectedTheme, setSelectedTheme] = useState('default_theme');
+    const [selectedLanguage, setselectedLanguage] = useState('en');
     const router = useRouter();
     const { id } = router.query;
 
@@ -105,18 +108,6 @@ const User = (props) => {
         setSelectedTheme(value);
     }
 
-
-    let themeListed = themes.map((theme, i) => {
-        return (
-            <li
-                className={theme.value === selectedTheme ? styles['active'] : ''}
-                onClick={() => changeThemeHandler(theme.value)}
-                key={i}>
-                {theme.name}
-            </li>
-        )
-    });
-
     const languages = [
         {
             name: 'Chiniese',
@@ -144,11 +135,10 @@ const User = (props) => {
         }
     ];
 
-    let languageListed = languages.map((language, i) => {
-        return (
-            <li key={i}>{language.name}</li>
-        );
-    });
+    const changeLanguageHandler = (value) => {
+        setselectedLanguage(value);
+    }
+
 
     let userInfo = null;
     let modulesInfo = null;
@@ -170,7 +160,7 @@ const User = (props) => {
                     </li>
                     <li>
                         <strong>Language: </strong>
-                        <span>{props.userDetail.data.language_code}</span>
+                        <span>{selectedLanguage}</span>
                     </li>
                     <li>
                         <strong>Theme: </strong>
@@ -206,21 +196,21 @@ const User = (props) => {
                 <section className={styles.settingsContent}>
                     <div className={styles.sharedContent}>
                         <strong className={styles.themeTitle}>Theme</strong>
-                        <ul className={styles.themeListed}>
-                            {themeListed}
-                        </ul>
+                        <Settings>
+                            <SettingList
+                                changeItemHandler={changeThemeHandler}
+                                selectedItem={selectedTheme}
+                                list={themes} />
+                        </Settings>
                     </div>
                     <div className={styles.sharedContent}>
                         <strong className={styles.themeTitle}>Language</strong>
-                        <ul className={styles.themeListed}>
-                            {languageListed}
-                        </ul>
-                    </div>
-                    <div className={styles.sharedContent}>
-                        <strong className={styles.themeTitle}>Time Zone</strong>
-                        <ul className={styles.themeListed}>
-                            {themeListed}
-                        </ul>
+                        <Settings>
+                            <SettingList
+                                changeItemHandler={changeLanguageHandler}
+                                selectedItem={selectedLanguage}
+                                list={languages} />
+                        </Settings>
                     </div>
                 </section>
             </SlidePanel>

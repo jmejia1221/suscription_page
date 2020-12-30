@@ -1,0 +1,36 @@
+.Feature {
+    width: 10rem;
+    flex: 1 1 20rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    background-color: var(--grey-lighter);
+    &:nth-child(even) {
+        margin-right: 0;
+    }
+    .header {
+        min-height: 5rem;
+        h4 {
+            font-size: 1.8rem;
+        }
+    }
+    .arrowIcon {
+        margin-left: 1rem;
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    .Feature {
+        &:nth-child(even) {
+            margin-right: 2rem;
+        }
+    }
+}
+@media screen and (min-width: 1213px) {
+    .Feature {
+        &:nth-child(even) {
+            margin-right: 2rem;
+        }
+    }
+}

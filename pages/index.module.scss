@@ -1,0 +1,28 @@
+.mainContent {
+    max-width: 96rem;
+    min-width: 96rem;
+    margin: 0 auto;
+    padding-top: 20rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.groupTitle {
+    margin-bottom: 5rem;
+}
+.title,
+.subtitle {
+    text-align: center;
+}
+.subtitle {
+    font-weight: normal;
+    color: var(--grey-dark);
+    font-size: 2.5rem;
+    margin-top: 1rem;
+}
+.title {
+    font-size: 5rem;
+    &--hightlight {
+        color: var(--primary);
+    }
+}

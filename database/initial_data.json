@@ -1,0 +1,68 @@
+[
+    {
+        "id": "16488627-b794-4d52-8daa-12d6caf473bd",
+        "data": {
+            "banner_message": "<p><span>Welcome</span> to Mr X's website</p>",
+            "LAST_PAYMENT_DATE": "2010-01-10T09:25:00Z",
+            "theme_name": "Tropical Island",
+            "user_profile_image": "https://i.imgur.com/LMhM8nn.jpg",
+            "ENABLED_FEATURES": {
+                "CERTIFICATES_INSTRUCTOR_GENERATION": true,
+                "ENABLE_COURSEWARE_SEARCH": true,
+                "ENABLE_EDXNOTES": true,
+                "ENABLE_DASHBOARD_SEARCH": true,
+                "INSTRUCTOR_BACKGROUND_TASKS": true,
+                "ENABLE_COURSE_DISCOVERY": true
+            },
+            "displayed_timezone": "America/Bogota",
+            "language_code": "en",
+            "CREATION_DATE": "2013-03-10T02:00:00Z",
+            "user_email": "barack@aol.com",
+            "SUBSCRIPTION": "premium"
+        }
+    },
+    {
+        "id": "6dcc8ff6-7080-46c5-88b4-bf144ad13d7b",
+        "data": {
+            "banner_message": "<h1>Chilling in the snow</h1>",
+            "LAST_PAYMENT_DATE": null,
+            "theme_name": "Candy Crush",
+            "user_profile_image": "https://i.imgur.com/YXOQCIp.png",
+            "ENABLED_FEATURES": {
+                "CERTIFICATES_INSTRUCTOR_GENERATION": false,
+                "ENABLE_COURSEWARE_SEARCH": false,
+                "ENABLE_EDXNOTES": true,
+                "ENABLE_DASHBOARD_SEARCH": false,
+                "INSTRUCTOR_BACKGROUND_TASKS": false,
+                "ENABLE_COURSE_DISCOVERY": false
+            },
+            "displayed_timezone": "Europe/Zurich",
+            "language_code": "de",
+            "CREATION_DATE": "2017-06-19T02:18:00Z",
+            "user_email": "lisaschneider@gmail.com",
+            "SUBSCRIPTION": "free"
+        }
+    },
+    {
+        "id": "0db7504b-7be1-471f-abbb-e7b31c27ff06",
+        "data": {
+            "banner_message": "<p>Everything is awesome</p>",
+            "LAST_PAYMENT_DATE": "2017-08-10T19:25:00Z",
+            "theme_name": "Mustache Bash",
+            "user_profile_image": "https://i.imgur.com/5ATSCxo.jpg",
+            "ENABLED_FEATURES": {
+                "CERTIFICATES_INSTRUCTOR_GENERATION": true,
+                "ENABLE_COURSEWARE_SEARCH": true,
+                "ENABLE_EDXNOTES": true,
+                "ENABLE_DASHBOARD_SEARCH": true,
+                "INSTRUCTOR_BACKGROUND_TASKS": false,
+                "ENABLE_COURSE_DISCOVERY": false
+            },
+            "displayed_timezone": "America/NewYork",
+            "language_code": "en",
+            "CREATION_DATE": "2016-06-10T02:18:00Z",
+            "user_email": "thegood@gmail.com",
+            "SUBSCRIPTION": "basic"
+        }
+    }
+]

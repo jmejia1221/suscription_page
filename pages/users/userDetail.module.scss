@@ -1,0 +1,120 @@
+.userDetail {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    padding: 5%;
+    box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.2);
+    border-radius: 3rem;
+    transform: translateY(20rem);
+    position: relative;
+    overflow: hidden;
+    .panel {
+        display: flex;
+        padding: 5rem 2rem 3rem;
+    }
+    .panelTitle {
+        width: 100%;
+        text-align: center;
+        font-size: 5rem;
+    }
+    .sharedContent {
+        padding: 2rem 4rem;
+    }
+    .themeTitle {
+        width: 100%;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        margin-left: 2.5rem;
+        display: inline-block;
+    }
+}
+.sectionDetail {
+    flex: 1 1 50rem;
+    padding: 0 0 0 3rem;
+    .linkToUsers {
+        top: 2rem;
+        left: 6rem;
+        position: absolute;
+        .icon {
+            margin-right: 1rem;
+        }
+        a {
+            font-weight: bold;
+            color: var(--grey-darkest);
+            text-decoration: none;
+        }
+    }
+    .settingsIcon {
+        cursor: pointer;
+        position: absolute;
+        top: 2.5rem;
+        font-size: 2.2rem;
+        right: 2.5rem;
+        transition: all .5s;
+        &:hover {
+            transform: rotate(360deg);
+        }
+    }
+}
+.aside {
+    color: var(--white);
+    min-width: 20rem;
+    max-width: 30rem;
+    padding: 5rem 2rem;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--grey-darkest);
+    box-shadow: 0 .8rem 2rem rgba(0,0,0,0.3);
+    .figure {
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        border-bottom: 1px solid var(--grey-lightest);
+        padding-bottom: 2rem;
+        margin-bottom: 5rem;
+        .image {
+            display: flex;
+            width: 15rem;
+            height: 15rem;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .infoList {
+        li {
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    .aside {
+        min-width: 100%;
+        margin-bottom: 4rem;
+        margin-top: 5rem;
+        padding: 5rem;
+        justify-content: flex-start;
+        .figure {
+            width: 100%;
+            justify-content: flex-start;
+            .image {
+                width: 5rem;
+                height: 5rem;
+            }
+            figcaption {
+                font-size: 2rem;
+                margin-left: 2rem;
+                margin-top: 1rem;
+            }
+        }
+    }
+}

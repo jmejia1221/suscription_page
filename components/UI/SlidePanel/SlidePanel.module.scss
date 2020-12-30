@@ -1,0 +1,37 @@
+.content {
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    opacity: 0;
+    background-color: var(--white);
+    display: none;
+}
+.showPanel {
+    display: block;
+    animation: panelShowed .3s ease-out forwards;
+}
+.closeIcon {
+    position: absolute;
+    font-size: 3.5rem;
+    top: 2rem;
+    right: 2.5rem;
+    cursor: pointer;
+}
+
+@keyframes panelShowed {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    50% {
+        opacity: .5;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        visibility: visible;
+    }
+}

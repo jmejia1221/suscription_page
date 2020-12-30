@@ -1,0 +1,19 @@
+.list {
+    cursor: pointer;
+    color: var(--grey-lightest);
+    background-color: var(--grey-darkest);
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    transition: all .5s;
+    margin-bottom: 1rem;
+    &:hover,
+    &.active {
+        background-color: var(--primary);
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+}

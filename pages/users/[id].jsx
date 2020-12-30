@@ -140,7 +140,9 @@ const User = (props) => {
         setselectedLanguage(value);
     }
 
-
+    let safe_tags_replace = (str) => {
+        return str.replace(/<\/?[^>]+(>|$)/g, "");
+    }
     let userInfo = null;
     let modulesInfo = <Spinner />;
     if (props.userDetail) {
@@ -218,6 +220,9 @@ const User = (props) => {
             {userInfo}
             <section className={styles.sectionDetail}>
                 <header>
+                    <h4 className={styles.banner}>
+                        {props.userDetail && safe_tags_replace(props.userDetail.data.banner_message)}
+                    </h4>
                     <span className={styles.linkToUsers}>
                         <Link href="/users">
                             <a>

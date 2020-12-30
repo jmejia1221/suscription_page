@@ -4,7 +4,7 @@
 
 ![Alt text](https://user-images.githubusercontent.com/5963197/103378523-95a12e80-4ab0-11eb-8a4d-59db4c6e6571.png)
 
-![Alt text](https://user-images.githubusercontent.com/5963197/103378526-96d25b80-4ab0-11eb-97cd-3a501b191df4.png)
+![Alt text](https://user-images.githubusercontent.com/5963197/103384148-50d2c300-4ac3-11eb-80ec-ffd83aa1c12d.png)
 
 ![Alt text](https://user-images.githubusercontent.com/5963197/103378527-976af200-4ab0-11eb-8dfd-e904808d9218.png)
 

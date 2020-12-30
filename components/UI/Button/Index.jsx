@@ -4,7 +4,6 @@ import React from 'react';
 import styles from './button.module.scss';
 
 const Button = (props) => {
-    console.log(props)
     return (
         <button
             disabled={props.isDisabled}

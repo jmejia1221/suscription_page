@@ -45,7 +45,6 @@ export const getUserDetailSuccess = (userData) => {
 
 export const getUserDetail = (userId) => {
     return dispatch => {
-        console.log('userId', userId)
         axios.get(`${URL}/customerdata/${userId}/`)
             .then(response => {
                 dispatch(getUserDetailSuccess(response.data));

@@ -93,9 +93,19 @@ const User = (props) => {
         }
     ];
 
+    let lastValue = null;
+    const testing = (value) => {
+        if (lastValue) {
+            document.body.classList.remove(lastValue);
+            document.body.classList.add(value);
+        }
+        lastValue = value;
+    }
+
     let themeListed = themes.map((theme, i) => {
+        console.log(theme)
         return (
-            <li key={i}>{theme.name}</li>
+            <li onClick={() => testing(theme.value)} key={i}>{theme.name}</li>
         )
     });
 

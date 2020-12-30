@@ -29,7 +29,6 @@ const getUserDetailStart = (state, action) => {
 }
 
 const getUserDetailSuccess = (state, action) => {
-    console.log('action', action.userDetail)
     return {
         ...state,
         userDetail: {...action.userDetail},

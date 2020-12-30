@@ -1,0 +1,42 @@
+.user {
+    flex: 1;
+    padding: 4rem 2rem;
+    color: var(--white);
+    background-color: var(--grey-darkest);
+    margin-right: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+    justify-content: center;
+    transition: all .5s;
+    &:hover {
+        background-color: var(--grey-dark);
+        box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.8);
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+    .figure {
+        width: 10rem;
+        height: 10rem;
+        display: flex;
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
+    }
+    .section {
+        width: 100%;
+        h6 {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        .infoList {
+            li {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

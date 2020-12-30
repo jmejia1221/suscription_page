@@ -32,6 +32,7 @@
     .themeListed {
         display: flex;
         padding: 1rem;
+        flex-wrap: wrap;
         li {
             cursor: pointer;
             color: var(--grey-lightest);
@@ -42,6 +43,7 @@
             border-radius: 1rem;
             margin-right: 1rem;
             transition: all .5s;
+            margin-bottom: 1rem;
             &:hover {
                 background-color: var(--primary);
             }
@@ -54,6 +56,19 @@
 .sectionDetail {
     flex: 1 1 50rem;
     padding: 0 0 0 3rem;
+    .linkToUsers {
+        top: 2rem;
+        left: 6rem;
+        position: absolute;
+        .icon {
+            margin-right: 1rem;
+        }
+        a {
+            font-weight: bold;
+            color: var(--grey-darkest);
+            text-decoration: none;
+        }
+    }
     .settingsIcon {
         cursor: pointer;
         position: absolute;
@@ -100,6 +115,29 @@
     .infoList {
         li {
             margin-bottom: 1.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    .aside {
+        min-width: 100%;
+        margin-bottom: 4rem;
+        margin-top: 5rem;
+        padding: 5rem;
+        justify-content: flex-start;
+        .figure {
+            width: 100%;
+            justify-content: flex-start;
+            .image {
+                width: 5rem;
+                height: 5rem;
+            }
+            figcaption {
+                font-size: 2rem;
+                margin-left: 2rem;
+                margin-top: 1rem;
+            }
         }
     }
 }

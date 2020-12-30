@@ -19,3 +19,18 @@
         margin-left: 1rem;
     }
 }
+
+@media screen and (max-width: 1020px) {
+    .Feature {
+        &:nth-child(even) {
+            margin-right: 2rem;
+        }
+    }
+}
+@media screen and (min-width: 1213px) {
+    .Feature {
+        &:nth-child(even) {
+            margin-right: 2rem;
+        }
+    }
+}

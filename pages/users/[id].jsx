@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 // Libs
-import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faCog } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRouter } from 'next/dist/client/router';
 import { connect } from 'react-redux';
@@ -208,6 +209,14 @@ const User = (props) => {
             {userInfo}
             <section className={styles.sectionDetail}>
                 <header>
+                    <span className={styles.linkToUsers}>
+                        <Link href="/users">
+                            <a>
+                                <FontAwesomeIcon className={styles.icon} icon={faChevronLeft} />
+                                Users
+                            </a>
+                        </Link>
+                    </span>
                     <div onClick={handlerPanel} className={styles.settingsIcon}>
                         <FontAwesomeIcon icon={faCog} />
                     </div>

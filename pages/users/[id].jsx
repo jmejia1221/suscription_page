@@ -12,6 +12,7 @@ import Feature from '../../components/Features/Feature/Feature';
 import Features from '../../components/Features/Features';
 import SlidePanel from '../../components/UI/SlidePanel/SlidePanel';
 
+// Redux
 import * as action from '../../redux/actions';
 
 // CSS
@@ -20,6 +21,7 @@ import Button from '../../components/UI/Button/Index';
 
 const User = (props) => {
     const [togglePanel, setTogglePanel] = useState(false);
+    const [selectedTheme, setSelectedTheme] = useState('default_theme');
     const router = useRouter();
     const { id } = router.query;
 
@@ -64,6 +66,10 @@ const User = (props) => {
 
     const themes = [
         {
+            name: 'Default',
+            value: 'default_theme'
+        },
+        {
             name: 'Simply Fabulous',
             value: 'simply_fabulous'
         },
@@ -93,19 +99,21 @@ const User = (props) => {
         }
     ];
 
-    let lastValue = null;
-    const testing = (value) => {
-        if (lastValue) {
-            document.body.classList.remove(lastValue);
-            document.body.classList.add(value);
-        }
-        lastValue = value;
+    const changeThemeHandler = (value) => {
+        document.body.classList.remove(selectedTheme);
+        document.body.classList.add(value);
+        setSelectedTheme(value);
     }
 
+
     let themeListed = themes.map((theme, i) => {
-        console.log(theme)
         return (
-            <li onClick={() => testing(theme.value)} key={i}>{theme.name}</li>
+            <li
+                className={theme.value === selectedTheme ? styles['active'] : ''}
+                onClick={() => changeThemeHandler(theme.value)}
+                key={i}>
+                {theme.name}
+            </li>
         )
     });
 
@@ -166,7 +174,7 @@ const User = (props) => {
                     </li>
                     <li>
                         <strong>Theme: </strong>
-                        <span>{props.userDetail.data.theme_name}</span>
+                        <span>{selectedTheme}</span>
                     </li>
                     <li>
                         <strong>Time Zone: </strong>

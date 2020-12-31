@@ -1,8 +1,9 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
+const URL = 'https://luismoreno.xyz/api/v1';
 // const URL = 'http://localhost:8010/api/v1';
-const URL = 'https://suscription-page.vercel.app/api/customerdata';
+// const URL = 'https://suscription-page.vercel.app/api/customerdata';
 
 export const getUsersStart = () => {
     return {

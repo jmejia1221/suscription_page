@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const isProd = process.env.NODE_ENV === 'production';
 const URL = isProd ?
-    'https://suscription-page.vercel.app/api' :
+    'https://suscription-page-ekpfxp4e6.vercel.app/api' :
     'http://localhost:3000/api';
 
 export const getUsersStart = () => {

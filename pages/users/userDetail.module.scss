@@ -7,7 +7,7 @@
     padding: 5%;
     box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.2);
     border-radius: 3rem;
-    transform: translateY(20rem);
+    transform: translateY(15rem);
     position: relative;
     overflow: hidden;
     .panel {
@@ -120,5 +120,11 @@
                 margin-top: 1rem;
             }
         }
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .userDetail {
+        transform: translateY(5rem);
     }
 }

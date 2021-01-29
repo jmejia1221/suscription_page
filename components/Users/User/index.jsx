@@ -7,7 +7,7 @@ const User = (props) => {
     return (
         <div onClick={() => props.showUserDetail(props.id)} className={styles.user}>
             <figure className={styles.figure}>
-                <img src={props.user.user_profile_image} />
+                <img width="100%" height="100%" src={props.user.user_profile_image} />
             </figure>
             <section className={styles.section}>
                 <h6>{props.user.user_email}</h6>

@@ -1,5 +1,6 @@
 .user {
-    flex: 1;
+    flex: 1 1;
+    min-width: 240px;
     padding: 4rem 2rem;
     color: var(--white);
     background-color: var(--grey-darkest);
@@ -10,6 +11,7 @@
     cursor: pointer;
     justify-content: center;
     transition: all .5s;
+    margin-bottom: 1rem;
     &:hover {
         background-color: var(--grey-dark);
         box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.8);
@@ -38,5 +40,11 @@
                 margin-bottom: 1rem;
             }
         }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .user {
+        margin-right: 0;
     }
 }

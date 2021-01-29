@@ -1,8 +1,10 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
-// const URL = 'http://localhost:8010/api/v1';
-const URL = 'https://suscription-page.vercel.app/api/customerdata';
+const isProd = process.env.NODE_ENV === 'production';
+const URL = isProd ?
+    'https://suscription-page.vercel.app/api' :
+    'http://localhost:3000/api';
 
 export const getUsersStart = () => {
     return {
@@ -21,7 +23,7 @@ export const getUsers = () => {
     return dispatch => {
         axios.get(URL + '/customerdata/')
             .then(response => {
-                dispatch(getUsersSuccess(response.data.results));
+                dispatch(getUsersSuccess(response.data.data));
             })
             .catch(err => {
                 console.log(err)
@@ -48,7 +50,7 @@ export const getUserDetail = (userId) => {
     return dispatch => {
         axios.get(`${URL}/customerdata/${userId}/`)
             .then(response => {
-                dispatch(getUserDetailSuccess(response.data));
+                dispatch(getUserDetailSuccess(response.data.data[0]));
             })
             .catch(err => {
                 console.log(err)
